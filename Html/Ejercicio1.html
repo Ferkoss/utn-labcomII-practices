@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="base-de-datos.php" method="post" target="_self">
+        <fieldset>
+            <legend>Datos personales</legend>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" required>
+        <br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="apellido" id="apellido" required>
+        <br>
+        <label for="telefono">Numero de telefono: </label>
+        <input type="number" name="telefono" id="telefono" required>
+        <br>
+        <label for="edad">Edad: </label>
+        <input type="number" name="edad" id="edad" required >
+    </fieldset>
+    <fieldset>
+        <legend>Datos del cursado</legend>
+        <select name="datos" id="datos" required>
+            <option value="0" selected disabled>Elija su turno</option>
+            <option value="1">Mañana</option>
+            <option value="2">Tarde</option>
+            <option value="3">Noche</option>
+        </select>
+        <br>
+        <select name="comision" id="comision" required>
+            <option value="0" selected disabled >Elija su comision</option>
+            <option value="1">1tup7</option>
+            <option value="2">1tup8</option>
+            <option value="3">1tup9</option>
+        </select>
+    </fieldset>
+        <br>
+        <button id="boton-enviar">Enviar</button>
+    </form>
+
+
+
+</body>
+</html>
