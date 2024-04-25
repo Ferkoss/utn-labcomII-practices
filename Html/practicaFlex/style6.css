@@ -1,0 +1,42 @@
+
+.general{
+display: flex;
+height: 100vh;
+width: 100vw;
+margin: 0;
+}
+
+.sidebar{
+display: flex;
+background-color: blue;
+
+}
+
+.contenido{
+    background-color: firebrick;
+    display: flex;
+    padding: 10px;
+}
+
+ul{
+display: flex;
+flex-direction: column;
+list-style: none;
+padding: 5px;
+justify-content: space-between;
+height: 50vh;
+
+}
+
+li{
+border-bottom: 1px solid black;
+
+
+}
+
+li a{
+text-decoration: none;
+color:black;
+border-bottom: 1px;
+border-color: black;
+}

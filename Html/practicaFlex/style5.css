@@ -1,0 +1,23 @@
+.general{
+display: flex;
+justify-content: space-between;
+width: 100vw;
+gap:2px;
+}
+
+.izquierda{
+background-color:red;
+width: 25%;
+height: 100vh;
+text-align: center;
+padding: 10px;
+
+}
+
+.derecha{
+background-color: gold;
+width: 75%;
+height: 100vh;
+text-align: center;
+padding: 10px;
+}

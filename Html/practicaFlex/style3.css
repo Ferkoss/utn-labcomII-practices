@@ -1,0 +1,12 @@
+ul{
+    display: flex;
+    gap:2px;
+    justify-content: space-between;
+    padding: 0;
+}
+li{
+    background-color:rgba(123,198,199,0.8) ;
+    list-style: none;
+    width:100%;
+    
+}
