@@ -1,0 +1,34 @@
+form{
+    background-color: brown;
+}
+fieldset,input
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+label{
+    text-align: center;
+}
+
+label{
+    
+}
+
+
+input {
+    background-color: blue;
+}
+
+
+#enviar{
+    width: 10%;
+    background-color: grey;
+}
+
+#enviar:focus {
+    background-color: blue;
+}
