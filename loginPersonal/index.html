@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="finIntentos" id="finIntentos"><h4>volver a intentar en</h4> <p id="tiempo"></p></div>
+    <div class="conteiner" id="conteiner">
+
+        <form action="">
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre">
+            <label for="contra">Contraseña: </label>
+            <input type="password" id="contra">
+            <label for="select-genero">Genero: </label>
+            <select name="select-genero" id="select-genero">
+                <option value="" disabled selected>Seleccione su Genero</option>
+                <option value="rgba(0, 0, 255, 0.3)">Masculino</option>
+                <option value="rgba(255, 192, 203, 0.3)">Femenino</option>
+            </select>
+            
+            <button type="button"id="verContra">Ver Contraseña</button>
+            <button type="button" id="login">Login</button>
+            
+        </form>
+        <div id="final"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

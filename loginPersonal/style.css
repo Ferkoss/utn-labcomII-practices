@@ -1,0 +1,66 @@
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://img.freepik.com/foto-gratis/puesta-sol-siluetas-arboles-montanas-ia-generativa_169016-29371.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+
+.conteiner {
+    width: 40%;
+    height: 90%;
+    border: 3px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    flex-direction: column;
+}
+
+
+
+.conteiner form{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#final {
+    display: none;
+    position: absolute;
+    bottom: 20%;
+}
+
+.error{
+    background-color: red;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.bien{
+    background-color: blue;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.finIntentos{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 0, 0, 0.6);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
