@@ -4,10 +4,10 @@ const tareasHacer = document.getElementById("incomplete-tasks")
 const listaCompletada = document.getElementById("completed-tasks")
 let arrayDatos = []
 const body = document.getElementById("body")
-
-
+let cargando=false
+let contador=0
 function carga() {
-    
+    cargando=true
     
     if (localStorage.getItem("datos")) {
         let storage = localStorage.getItem("datos")
@@ -15,14 +15,16 @@ function carga() {
         alert(storage)
         if (storage.trim() != "") {
             arrayDatos = storage.split(",");
-            console.log(arrayDatos)
             
-            if (arrayDatos.length > 0) {
-                for ( var i=0;i<arrayDatos.length;i++) {
-                    agregarTarea(arrayDatos[i]);
-                    console.log(arrayDatos[i])
+            longitudArrayDatos=arrayDatos.length
+            if (longitudArrayDatos > 0) {
+                for ( var i=0;i<longitudArrayDatos;i++) {
+                  recargarTarea(arrayDatos,i);
+                    //console.log(arrayDatos[i])
+                    //alert(i +" "+longitudArrayDatos)
                 }
-               alert(arrayDatos.length)
+                contador=0
+               //alert(arrayDatos.length)
             
             }
         }
@@ -54,11 +56,20 @@ function manejarStorage(key, value, op) {
         arrayDatos.push(value);
         localStorage.setItem(key, arrayDatos);
     }
+    if(contador==arrayDatos.length){
+        cargando=false
+    }
+    if(op=="R") {
+      arrayDatos.push(value);
+    }
+
 }
 
 
 
 botonAgregarTareas.addEventListener("click", agregarTarea = () => {
+    
+
     let li = document.createElement("li")
     tareasHacer.appendChild(li)
 
@@ -112,6 +123,7 @@ botonAgregarTareas.addEventListener("click", agregarTarea = () => {
         li.remove()
 
     })
+    
     manejarStorage("datos", label.innerText, "I")
 
 
@@ -119,6 +131,64 @@ botonAgregarTareas.addEventListener("click", agregarTarea = () => {
 
 
 })
+
+
+function recargarTarea(array,i){
+  let li = document.createElement("li")
+  tareasHacer.appendChild(li)
+
+  let check = document.createElement("input")
+  check.type = "checkbox"
+  li.appendChild(check)
+  check.addEventListener("change", () => {
+
+  })
+
+  let label = document.createElement("label")
+  li.appendChild(label)
+  label.innerText = array[i]
+
+  let input = document.createElement("input")
+  li.appendChild(input)
+  input.style.display = "none"
+
+  btn = document.createElement("button")
+  li.appendChild(btn)
+  btn.classList.add("edit")
+
+
+
+  i = document.createElement("i")
+  i.classList.add("fas", "fa-pen")
+  btn.appendChild(i)
+  i.addEventListener("click", () => {
+      if (input.style.display == "none") {
+          label.style.display = "none"
+          input.style.display = "inline"
+          input.value = label.innerText
+
+      }
+      else {
+          label.style.display = "inline"
+          input.style.display = "none"
+          label.innerText = input.value
+      }
+  })
+
+
+  btn2 = document.createElement("button")
+  li.appendChild(btn2)
+  btn2.classList.add("delete")
+
+  i2 = document.createElement("i")
+  btn2.appendChild(i2)
+  i2.classList.add("fas", "fa-trash-alt")
+  i2.addEventListener("click", (e) => {
+      li.remove()
+
+  })
+  manejarStorage(null, array[i], "R")
+}
 
 /*function manejarStorage(key, value, op) {
   if (op == "I") {
